@@ -1,8 +1,4 @@
-Before you can run the prediction sample prediction.py, you must load some csv
-formatted data into Google Storage. You can do this by running setup.sh with a
-bucket/object name of your choice. You must first create the bucket you want
-to use. This can be done with the gsutil function or via the web UI (Storage
-Access) in the Google APIs Console.
-
-api: prediction
-keywords: cmdline
+The dataset for the project was taken from: http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/.
+I reduced the dataset a little bit. It contains spam and ham text messages. The dataset is here: english.csv.
+Using that dataset it can be possible to predict if new message is spam. 
+This functionality is widely used in message and emails spam filters. 

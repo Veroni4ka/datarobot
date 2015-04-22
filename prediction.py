@@ -4,12 +4,11 @@
 
 """
 To run the program type:
-  $ python prediction.py object_name="bucket/object" id="model_id" project="project_id"
+  $ python prediction.py 
 """
 
 __author__ = ('veronika.kolesnikova@yahoo.com (Veronika Kolesnikova)')
 
-import argparse
 import os
 import pprint
 import sys
@@ -25,16 +24,6 @@ SLEEP_TIME = 10
 
 
 
-# Declare command-line flags.
-argparser = argparse.ArgumentParser(add_help=False)
-argparser.add_argument('object_name',
-                     help='Full Google Storage path of csv data (ex bucket/object)')
-argparser.add_argument('id',
-                     help='Model Id of your choosing to name trained model')
-argparser.add_argument('project',
-                     help='Project ID from Google Developers Console')
-
-
 def print_header(line):
   '''Format and print header block sized to length of line'''
   header_str = '='
@@ -47,7 +36,7 @@ def print_header(line):
 def main(argv):
   
   service, flags = sample_tools.init(
-      argv, 'prediction', 'v1.6', __doc__, __file__, parents=[argparser],
+      argv, 'prediction', 'v1.6', __doc__, __file__, 
       scope=('https://www.googleapis.com/auth/prediction', 'https://www.googleapis.com/auth/devstorage.full_control'))
   pid="spam"
   object_name="dr_hometask/english.csv"
